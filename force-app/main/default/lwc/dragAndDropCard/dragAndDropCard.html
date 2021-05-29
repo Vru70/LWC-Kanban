@@ -1,0 +1,34 @@
+<!--
+  @author            : Vrushabh Uprikar
+  @last modified on  : 05-29-2021
+  @last modified by  : Vrushabh Uprikar
+  Modifications Log 
+  Ver   Date         Author             Modification
+  1.0   05-29-2021   Vrushabh Uprikar   Initial Version
+-->
+<template>
+    <template if:true={isSameStage}>
+        <li class="slds-item slds-var-m-around_small" draggable="true" ondragstart={itemDragStart}>
+            <article class="slds-tile slds-tile_board">
+                <h3 class="slds-truncate" title={record.Name}>
+                    <a href="#" data-id={record.Id} onclick={navigateOppHandler}>
+                        <span class="slds-truncate" data-id={record.Id}>
+                            {record.Name}
+                        </span>
+                    </a>
+                </h3>
+                <div class="slds-tile__detail slds-text-body_small">
+                    <p class="slds-text-heading_small">Amount: ${record.Amount}</p>
+                    <p class="slds-truncate" title={record.AccountName}>
+                        <a href="#" data-id={record.AccountId} onclick={navigateAccHandler}>
+                            <span class="slds-truncate" data-id={record.AccountId}>
+                                {record.AccountName}
+                            </span>
+                        </a>
+                    </p>
+                    <p class="slds-truncate" title={record.CloseDate}>Closing {record.CloseDate}</p>
+                </div>
+            </article>
+        </li>
+    </template>
+</template>
