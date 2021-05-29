@@ -1,0 +1,18 @@
+<!--
+  @author            : Vrushabh Uprikar
+  @last modified on  : 05-29-2021
+  @last modified by  : Vrushabh Uprikar
+  Modifications Log 
+  Ver   Date         Author             Modification
+  1.0   05-29-2021   Vrushabh Uprikar   Initial Version
+-->
+<template>
+
+    <ul class="slds-has-dividers_around-space dropZone" ondrop={handleDrop} ondragover={handleDragOver}
+        style="height:70vh; overflow-y:auto;">
+        <template for:each={records} for:item="recordItem">
+            <c-drag-and-drop-card stage={stage} record={recordItem} key={recordItem.Id} onitemdrag={handleItemDrag}>
+            </c-drag-and-drop-card>
+        </template>
+    </ul>
+</template>
